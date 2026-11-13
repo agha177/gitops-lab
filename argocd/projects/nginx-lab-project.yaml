@@ -1,0 +1,28 @@
+apiVersion: argoproj.io/v1alpha1
+kind: AppProject
+
+metadata:
+  name: nginx-lab
+  namespace: argocd
+
+spec:
+  description: Restricted project for the Nginx GitOps lab
+
+  sourceRepos:
+    - https://github.com/agha177/gitops-lab.git
+
+  destinations:
+    - server: https://kubernetes.default.svc
+      namespace: gitops-demo
+
+  namespaceResourceWhitelist:
+    - group: apps
+      kind: Deployment
+
+    - group: ""
+      kind: Service
+
+    - group: ""
+      kind: ConfigMap
+
+  clusterResourceWhitelist: []

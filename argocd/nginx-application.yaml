@@ -5,7 +5,7 @@ metadata:
   namespace: argocd
 
 spec:
-  project: default
+  project: nginx-lab
 
   source:
     repoURL: https://github.com/agha177/gitops-lab.git
@@ -21,5 +21,4 @@ spec:
     automated:
       prune: false
       selfHeal: true
-    syncOptions:
-      - CreateNamespace=true  
+      
