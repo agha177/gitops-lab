@@ -13,7 +13,7 @@ spec:
     path: charts/nginx
 
     helm:
-      releasName: nginx-demo
+      releaseName: nginx-demo
       valueFiles:
         - values.yaml
 
