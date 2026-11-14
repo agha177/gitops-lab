@@ -10,7 +10,13 @@ spec:
   source:
     repoURL: https://github.com/agha177/gitops-lab.git
     targetRevision: main
-    path: apps/nginx
+    path: charts/nginx
+
+    helm:
+      releasName: nginx-demo
+      valueFiles:
+        - values.yaml
+
 
   
   destination:
@@ -19,6 +25,6 @@ spec:
 
   syncPolicy:
     automated:
-      prune: false
+      prune: true
       selfHeal: true
       
