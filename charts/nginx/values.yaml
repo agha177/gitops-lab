@@ -1,0 +1,23 @@
+replicaCount: 3
+
+image:
+  repository: nginx
+  tag: "1.27-alpine"
+  pullPolicy: IfNotPresent
+
+service:
+  port: 80
+
+resources:
+  requests:
+    cpu: 25m
+    memory: 32Mi
+  limits:
+    cpu: 200m
+    memory: 128Mi
+
+html:
+  title: GitOps Demo
+  heading: Hello from Argo CD!
+  environment: Development
+  version: "2.0"
