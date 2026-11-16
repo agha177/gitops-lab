@@ -17,7 +17,7 @@ spec:
     namespace: kustomize-dev
 
 
-  syncePolicy:
+  syncPolicy:
     automated:
       selfHeal: true
       prune: true
