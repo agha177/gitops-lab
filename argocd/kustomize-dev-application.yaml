@@ -13,7 +13,7 @@ spec:
     path: kustomize/nginx/overlays/dev
 
   destination:
-    server: https://kubernetes/default.svc
+    server: https://kubernetes.default.svc
     namespace: kustomize-dev
 
 
