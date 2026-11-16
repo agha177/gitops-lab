@@ -3,10 +3,9 @@ kind: Application
 metadata:
   name: kustomize-nginx-dev
   namespace: argocd
-
-spec: 
+spec:
   project: default
-  
+
   source:
     repoURL: https://github.com/agha177/gitops-lab.git
     targetRevision: main
@@ -16,10 +15,9 @@ spec:
     server: https://kubernetes.default.svc
     namespace: kustomize-dev
 
-
   syncPolicy:
     automated:
-      selfHeal: true
       prune: true
+      selfHeal: true
     syncOptions:
-      - CreateNameSpace=true
+      - CreateNamespace=true
