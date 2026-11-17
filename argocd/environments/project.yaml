@@ -1,0 +1,30 @@
+apiVersion: argoproj.io/v1alpha1
+kind: AppProject
+metadata:
+  name: multi-env-lab
+  namespace: argocd
+spec:
+  description: Multi-environment GitOps training project
+
+  sourceRepos:
+    - https://github.com/agha177/gitops-lab.git
+
+  destinations:
+    - server: https://kubernetes.default.svc
+      namespace: kustomize-dev
+
+    - server: https://kubernetes.default.svc
+      namespace: kustomize-staging
+
+    - server: https://kubernetes.default.svc
+      namespace: kustomize-prod
+
+  namespaceResourceWhitelist:
+    - group: apps
+      kind: Deployment
+    - group: ""
+      kind: Service
+
+  clusterResourceWhitelist:
+    - group: ""
+      kind: Namespace

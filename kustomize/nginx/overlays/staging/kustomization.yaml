@@ -19,4 +19,4 @@ images:
 
 replicas:
   - name: nginx
-    count: 2  
+    count: 1  

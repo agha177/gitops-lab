@@ -16,7 +16,7 @@ labels:
 
 images:
   - name: nginx
-    newTag: 1.28-alpine
+    newTag: 1.27-alpine
 
 replicas: 
   - name: nginx

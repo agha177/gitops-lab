@@ -14,11 +14,13 @@ labels:
       managed-by: kustomize
     includeSelectors: false
 
-    
+images:
+  - name: nginx
+    newTag: 1.28-alpine  
 
 replicas:
   - name: nginx
-    count: 2
+    count: 1
 
 patches:
   - path: patch-resources.yaml
